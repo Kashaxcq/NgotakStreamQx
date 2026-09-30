@@ -65,7 +65,7 @@ const writeMobileSyncManifestNow = async (
   if (!directory) {
     throw new Error('Unable to create NgotakStreamQx Film sync directory');
   }
-  const fileName = `ngotakstreamqxfilm-${manifest.deviceId}.json`;
+  const fileName = `ngotakstreamqx-${manifest.deviceId}.json`;
   const existing = await findChild(directory, fileName);
   const fileUri =
     existing ||

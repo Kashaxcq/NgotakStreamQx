@@ -12,7 +12,7 @@ const NATIVE_MODULE_OVERRIDES = {
     loadAsync: jest.fn(() => Promise.resolve()),
   },
   ExpoApplication: {
-    applicationId: 'com.ngotakstreamqxfilm.test',
+    applicationId: 'com.qxshaa.ngotakstreamqx.test',
     applicationName: 'NgotakStreamQx Film',
     nativeApplicationVersion: '1.0.3',
     nativeBuildVersion: '193',

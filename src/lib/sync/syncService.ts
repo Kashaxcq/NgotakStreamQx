@@ -30,10 +30,10 @@ import {
   writeMobileSyncManifest,
 } from './mobileManifestStorage';
 
-const DEVICE_ID_KEY = 'ngotakstreamqxfilm-sync-device-id';
-const REVISION_KEY = 'ngotakstreamqxfilm-sync-revision';
-const TOMBSTONES_KEY = 'ngotakstreamqxfilm-sync-tombstones';
-const HISTORY_KEY = 'ngotakstreamqxfilm-sync-history';
+const DEVICE_ID_KEY = 'ngotakstreamqx-sync-device-id';
+const REVISION_KEY = 'ngotakstreamqx-sync-revision';
+const TOMBSTONES_KEY = 'ngotakstreamqx-sync-tombstones';
+const HISTORY_KEY = 'ngotakstreamqx-sync-history';
 const PUBLISH_DELAY_MS = 3000;
 
 let initialized = false;

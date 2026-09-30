@@ -26,11 +26,11 @@
 - **Home:** `Home`, `Hero`, `Info`, `EpisodeRowContent`, `ContentOverview`, `SearchSubtitles`, `WatchList`, `Downloads`, `Search`, `AmbientBackground`.
 - **Settings:**
   - `Settings` (updater dihapus, sesuai APK), `Preference`, `Surface`, `SettingsSection`, `SettingsRow`, `SquareSettingsCard`;
-  - `Extensions`, `ProviderSourceManager`, `ExtensionManager` (default ke provider `ngotakstreamqxfilm`), `builtinAirflix`;
+  - `Extensions`, `ProviderSourceManager`, `ExtensionManager` (default ke provider `ngotakstreamqx`), `builtinAirflix`;
   - halaman `About` yang baru.
 - **Statistik:** 4 file Stats, `AnimatedTabIconParts`, route `stats`.
 - **Lain-lain:** `downloadManager`, `Notification` (tanpa apk-installer/update), `GlobalErrorBoundary`, `client.ts`.
-- **`App.tsx`:** route `AdultSection` dan Stats, serta pemilihan provider awal `ngotakstreamqxfilm` saat pertama kali init.
+- **`App.tsx`:** route `AdultSection` dan Stats, serta pemilihan provider awal `ngotakstreamqx` saat pertama kali init.
 - **Aset dari APK:** `hentai_icon.png`, `icon_transparent.png`, logo bootsplash (byte-identik) dan ikon launcher di `android/.../mipmap-*` (byte-identik).
 
 ### Rebranding (NgotakStream Qx / QxShaa)
@@ -86,6 +86,6 @@
 10. **Dibiarkan apa adanya karena fungsional atau atribusi:**
     - identifier `builtinAirflix` (paket provider pihak ketiga dari AirFlix);
     - pengecekan URL `airflix-providers` (migrasi sumber lama);
-    - URL provider `B7ByteMe/ngotakstreamqxfilm-providers`;
+    - URL provider `B7ByteMe/ngotakstreamqx-providers`;
     - komentar asal port di `urlGuard.ts`.
 11. **Catatan tipe:** `fullscreenOrientation: 'default'` di Player dipertahankan sesuai APK dan diberi cast karena tipe library tidak mengenalnya. Dua bug APK (import tema dan Clear cache) sudah diperbaiki, lihat "Perbaikan bug".

@@ -20,5 +20,5 @@
 -keep interface org.libtorrent4j.** { *; }
 -keep enum org.libtorrent4j.** { *; }
 
-# Keep custom native modules (both com.ngotakstreamqxfilm and dynamic package)
--keep class com.ngotakstreamqxfilm.** { *; }
+# Keep custom native modules (both com.ngotakstreamqx and dynamic package)
+-keep class com.ngotakstreamqx.** { *; }

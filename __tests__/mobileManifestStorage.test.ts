@@ -1,8 +1,8 @@
 import {beforeEach, describe, expect, it, jest} from '@jest/globals';
 
 const syncDirectoryUri =
-  'content://storage/tree/primary%3Angotakstreamqxfilm/document/primary%3Angotakstreamqxfilm%2F.ngotakstreamqxfilm-sync';
-const manifestUri = `${syncDirectoryUri}%2Fngotakstreamqxfilm-mobile.json`;
+  'content://storage/tree/primary%3Angotakstreamqx/document/primary%3Angotakstreamqx%2F.ngotakstreamqx-sync';
+const manifestUri = `${syncDirectoryUri}%2Fngotakstreamqx-mobile.json`;
 
 jest.mock('expo-file-system/legacy', () => ({
   StorageAccessFramework: {
@@ -28,8 +28,8 @@ import type {NgotakSyncManifest} from '../src/lib/sync/manifest';
 
 const location = {
   type: 'saf' as const,
-  uri: 'content://storage/tree/primary%3Angotakstreamqxfilm',
-  label: 'Internal storage/ngotakstreamqxfilm',
+  uri: 'content://storage/tree/primary%3Angotakstreamqx',
+  label: 'Internal storage/ngotakstreamqx',
 };
 
 const manifest = (revision: number): NgotakSyncManifest => ({
@@ -93,7 +93,7 @@ describe('mobile sync manifest storage', () => {
     expect(mockCreateFile).toHaveBeenCalledTimes(1);
     expect(mockCreateFile).toHaveBeenCalledWith(
       syncDirectoryUri,
-      'ngotakstreamqxfilm-mobile.json',
+      'ngotakstreamqx-mobile.json',
       'application/json',
     );
   });

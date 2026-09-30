@@ -1,4 +1,4 @@
-package com.ngotakstreamqxfilm
+package com.qxshaa.ngotakstreamqx
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -63,7 +63,7 @@ class HttpDownloadModule(
     }
 
     private val metadata by lazy {
-        reactContext.getSharedPreferences("ngotakstreamqxfilm_http_downloads", Context.MODE_PRIVATE)
+        reactContext.getSharedPreferences("ngotakstreamqx_http_downloads", Context.MODE_PRIVATE)
     }
 
     private val connectivityManager by lazy {

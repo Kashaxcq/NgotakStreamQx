@@ -78,7 +78,7 @@ export class ExtensionManager {
 
   /**
    * Replace the legacy upstream provider source with the default
-   * NgotakStreamQx Film (ngotakstreamqxfilm) provider source. Runs once.
+   * NgotakStreamQx Film (ngotakstreamqx) provider source. Runs once.
    */
   private migrateToNgotakStreamQxFilmProviders(): void {
     try {

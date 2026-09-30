@@ -117,7 +117,7 @@ const bootThemeMethod = `  private fun getBootTheme(): Int {
       "LauncherGray" -> "gray"
       "LauncherBlue" -> "blue"
       "LauncherLavender" -> "lavender"
-      else -> getSharedPreferences("ngotakstreamqxfilm_launcher", MODE_PRIVATE)
+      else -> getSharedPreferences("ngotakstreamqx_launcher", MODE_PRIVATE)
         .getString("icon", "white")
     }
     return when (selectedIcon) {
@@ -232,7 +232,7 @@ const withLauncherResources = config =>
       copySplashResources(projectRoot, resRoot);
       patchGeneratedBootSplashFiles(
         projectRoot,
-        modConfig.android?.package || 'com.ngotakstreamqxfilm',
+        modConfig.android?.package || 'com.qxshaa.ngotakstreamqx',
       );
       return modConfig;
     },

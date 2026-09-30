@@ -39,8 +39,8 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="ngotakstreamqxfilm"/>
-        <data android:scheme="exp+ngotakstreamqxfilm"/>
+        <data android:scheme="ngotakstreamqx"/>
+        <data android:scheme="exp+ngotakstreamqx"/>
       </intent-filter>
     </activity>
     <activity android:name="com.reactnative.googlecast.RNGCExpandedControllerActivity"/>

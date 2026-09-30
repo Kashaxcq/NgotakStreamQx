@@ -1,4 +1,4 @@
-package com.ngotakstreamqxfilm
+package com.qxshaa.ngotakstreamqx
 
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.Promise

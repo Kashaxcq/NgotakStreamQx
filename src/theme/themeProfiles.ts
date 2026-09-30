@@ -134,7 +134,7 @@ export const createPaletteFromProfile = (
   } as MaterialColors;
 };
 
-export const THEME_EXPORT_FORMAT = 'ngotakstreamqxfilm-theme';
+export const THEME_EXPORT_FORMAT = 'ngotakstreamqx-theme';
 export const THEME_EXPORT_VERSION = 1;
 
 export const serializeThemeForExport = (profile: ThemeProfileDraft) => ({

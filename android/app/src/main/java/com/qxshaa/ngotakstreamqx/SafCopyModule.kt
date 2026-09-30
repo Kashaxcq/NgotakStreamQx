@@ -1,4 +1,4 @@
-package com.ngotakstreamqxfilm
+package com.qxshaa.ngotakstreamqx
 
 import android.net.Uri
 import com.facebook.react.bridge.NativeModule
