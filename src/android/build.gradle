@@ -1,0 +1,39 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+// @generated begin react-native-google-cast-version-import - expo prebuild (DO NOT MODIFY) sync-751dea5919495636a44001495c681e3442af2777
+  ext {
+        castFrameworkVersion = "+"
+  }
+// @generated end react-native-google-cast-version-import
+  repositories {
+    google()
+    mavenCentral()
+  }
+  dependencies {
+    classpath('com.android.tools.build:gradle')
+    classpath('com.facebook.react:react-native-gradle-plugin')
+    classpath('org.jetbrains.kotlin:kotlin-gradle-plugin')
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+    maven { url 'https://www.jitpack.io'; content { includeGroupByRegex "io\\.github\\..*" } }
+  }
+  // Limit native ABIs to save memory/time (only arm64 + armv7 needed)
+  plugins.withId('com.android.library') {
+    android {
+      defaultConfig {
+        ndk {
+          abiFilters "arm64-v8a", "armeabi-v7a"
+        }
+      }
+    }
+  }
+}
+
+apply plugin: "expo-root-project"
+apply plugin: "com.facebook.react.rootproject"
