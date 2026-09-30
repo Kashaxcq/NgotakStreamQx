@@ -92,7 +92,7 @@ export class ExtensionManager {
       });
       extensionStorage.addProviderSources(
         'B7ByteMe',
-        'https://raw.githubusercontent.com/B7ByteMe/valorafilm-providers/refs/heads/main',
+        'https://raw.githubusercontent.com/B7ByteMe/ngotakstreamqx-providers/refs/heads/main',
       );
       extensionStorage.setDefaultProviderSource('B7ByteMe');
       mainStorage.setBool('hasMigratedNgotakStreamQxProviders_v1', true);
@@ -445,7 +445,7 @@ export class ExtensionManager {
       if (extensionStorage.getProviderSources().length === 0) {
         extensionStorage.addProviderSources(
           'B7ByteMe',
-          'https://raw.githubusercontent.com/B7ByteMe/valorafilm-providers/refs/heads/main',
+          'https://raw.githubusercontent.com/B7ByteMe/ngotakstreamqx-providers/refs/heads/main',
         );
         extensionStorage.setDefaultProviderSource('B7ByteMe');
       }
@@ -453,14 +453,14 @@ export class ExtensionManager {
       if (
         !extensionStorage
           .getInstalledProviders()
-          .some(provider => provider.value === 'valorafilm')
+          .some(provider => provider.value === 'ngotakstreamqx')
       ) {
         const defaultSource = this.getActiveSource() || {
           author: 'B7ByteMe',
-          url: 'https://raw.githubusercontent.com/B7ByteMe/valorafilm-providers/refs/heads/main',
+          url: 'https://raw.githubusercontent.com/B7ByteMe/ngotakstreamqx-providers/refs/heads/main',
         };
-        const valorafilmProvider: ProviderExtension = {
-          value: 'valorafilm',
+        const ngotakstreamqxProvider: ProviderExtension = {
+          value: 'ngotakstreamqx',
           display_name: 'NgotakStreamQx Film',
           source: {
             author: defaultSource.author,
@@ -478,13 +478,13 @@ export class ExtensionManager {
             () => [] as ProviderExtension[],
           );
           const remoteProvider = manifest.find(
-            provider => provider.value === 'valorafilm',
+            provider => provider.value === 'ngotakstreamqx',
           );
           if (remoteProvider?.version) {
-            valorafilmProvider.version = remoteProvider.version;
+            ngotakstreamqxProvider.version = remoteProvider.version;
           }
           console.log('Auto-downloading NgotakStreamQx Film provider on startup...');
-          await this.installProvider(valorafilmProvider);
+          await this.installProvider(ngotakstreamqxProvider);
           console.log('Successfully auto-downloaded NgotakStreamQx Film provider');
         } catch (networkError) {
           console.warn(
@@ -494,7 +494,7 @@ export class ExtensionManager {
           // Pre-install the provider from the bundled memory copy
           try {
             const {builtinAirflix} = require('./builtinAirflix');
-            extensionStorage.installProvider(valorafilmProvider);
+            extensionStorage.installProvider(ngotakstreamqxProvider);
 
             const modulesObj: Record<string, string> = {};
             for (const [fileName, fileCode] of Object.entries(builtinAirflix)) {
@@ -504,9 +504,9 @@ export class ExtensionManager {
             }
 
             extensionStorage.cacheProviderModules({
-              value: 'valorafilm',
+              value: 'ngotakstreamqx',
               sourceAuthor: defaultSource.author,
-              version: valorafilmProvider.version,
+              version: ngotakstreamqxProvider.version,
               cachedAt: Date.now(),
               modules: modulesObj,
             });
