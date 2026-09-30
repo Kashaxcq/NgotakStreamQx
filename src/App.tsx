@@ -356,7 +356,7 @@ const App = () => {
 
           if (!currentProvider?.value || !currentProviderIsInstalled) {
             const preferredProvider =
-              installedProviders.find(p => p.value === 'valorafilm') ||
+              installedProviders.find(p => p.value === 'ngotakstreamqx') ||
               installedProviders[0];
             useContentStore.getState().setProvider(preferredProvider);
             useContentStore

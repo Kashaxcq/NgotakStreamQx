@@ -78,7 +78,7 @@ export class ExtensionManager {
 
   /**
    * Replace the legacy upstream provider source with the default
-   * NgotakStream Qx (valorafilm) provider source. Runs once.
+   * NgotakStream Qx (ngotakstreamqx) provider source. Runs once.
    */
   private migrateToBuiltinProviders(): void {
     try {
@@ -92,7 +92,7 @@ export class ExtensionManager {
       });
       extensionStorage.addProviderSources(
         'B7ByteMe',
-        'https://raw.githubusercontent.com/B7ByteMe/valorafilm-providers/refs/heads/main',
+        'https://raw.githubusercontent.com/B7ByteMe/ngotakstreamqx-providers/refs/heads/main',
       );
       extensionStorage.setDefaultProviderSource('B7ByteMe');
       mainStorage.setBool('hasMigratedValoraProviders_v1', true);
@@ -445,7 +445,7 @@ export class ExtensionManager {
       if (extensionStorage.getProviderSources().length === 0) {
         extensionStorage.addProviderSources(
           'B7ByteMe',
-          'https://raw.githubusercontent.com/B7ByteMe/valorafilm-providers/refs/heads/main',
+          'https://raw.githubusercontent.com/B7ByteMe/ngotakstreamqx-providers/refs/heads/main',
         );
         extensionStorage.setDefaultProviderSource('B7ByteMe');
       }
@@ -453,14 +453,14 @@ export class ExtensionManager {
       if (
         !extensionStorage
           .getInstalledProviders()
-          .some(provider => provider.value === 'valorafilm')
+          .some(provider => provider.value === 'ngotakstreamqx')
       ) {
         const defaultSource = this.getActiveSource() || {
           author: 'B7ByteMe',
-          url: 'https://raw.githubusercontent.com/B7ByteMe/valorafilm-providers/refs/heads/main',
+          url: 'https://raw.githubusercontent.com/B7ByteMe/ngotakstreamqx-providers/refs/heads/main',
         };
         const qxProvider: ProviderExtension = {
-          value: 'valorafilm',
+          value: 'ngotakstreamqx',
           display_name: 'NgotakStream Qx',
           source: {
             author: defaultSource.author,
@@ -478,7 +478,7 @@ export class ExtensionManager {
             () => [] as ProviderExtension[],
           );
           const remoteProvider = manifest.find(
-            provider => provider.value === 'valorafilm',
+            provider => provider.value === 'ngotakstreamqx',
           );
           if (remoteProvider?.version) {
             qxProvider.version = remoteProvider.version;
@@ -504,7 +504,7 @@ export class ExtensionManager {
             }
 
             extensionStorage.cacheProviderModules({
-              value: 'valorafilm',
+              value: 'ngotakstreamqx',
               sourceAuthor: defaultSource.author,
               version: qxProvider.version,
               cachedAt: Date.now(),
