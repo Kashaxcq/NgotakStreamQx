@@ -80,7 +80,7 @@ export class ExtensionManager {
    * Replace the legacy upstream provider source with the default
    * NgotakStreamQx Film (ngotakstreamqx) provider source. Runs once.
    */
-  private migrateToNgotakStreamQxFilmProviders(): void {
+  private migrateToNgotakStreamQxProviders(): void {
     try {
       if (mainStorage.getBool('hasMigratedNgotakStreamQxProviders_v1', false)) {
         return;
@@ -440,7 +440,7 @@ export class ExtensionManager {
     try {
       this.migrateLegacyCustomProviderSource();
 
-      this.migrateToNgotakStreamQxFilmProviders();
+      this.migrateToNgotakStreamQxProviders();
 
       if (extensionStorage.getProviderSources().length === 0) {
         extensionStorage.addProviderSources(

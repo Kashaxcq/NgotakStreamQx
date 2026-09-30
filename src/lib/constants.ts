@@ -45,5 +45,5 @@ export const themes: {name: string; color: string}[] = [
 ];
 
 export const socialLinks = {
-  github: 'https://github.com/flowzyren-wq/NgotakStreamQxFilm',
+  github: 'https://github.com/Kashaxcq/NgotakStreamQx',
 };
