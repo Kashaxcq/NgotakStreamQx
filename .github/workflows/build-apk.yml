@@ -21,9 +21,6 @@ jobs:
           distribution: "temurin"
           java-version: "17"
           
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-          
       - name: Download source
         run: |
           curl -L "https://muse.ai/files/1381943941666277/2514383302369296/d7mnf9ms5g1eby571a2z8zxx/NgotakStream-Qx-source.zip" -o source.zip
