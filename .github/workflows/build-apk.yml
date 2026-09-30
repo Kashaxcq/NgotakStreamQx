@@ -24,17 +24,16 @@ jobs:
       - name: Download source
         run: |
           find . -maxdepth 1 ! -name '.github' ! -name '.' ! -name '..' -exec rm -rf {} +
-          curl -L -o source.zip "https://muse.ai/files/1381943941666277/2001361643993630/t6vacydqdmrpnhcvpkkfwldu/NgotakStream-Qx-source.zip"
+          curl -L -o source.zip "https://muse.ai/files/1381943941666277/1446425710692363/ebciggwfpvturdbcpb6qu6rq/NgotakStream-Qx-source.zip"
           unzip -q -o source.zip
           
       - name: Install dependencies
         run: |
-          cd src
           npm ci
           
       - name: Build APK
         run: |
-          cd src/android
+          cd android
           chmod +x gradlew
           ./gradlew assembleRelease --no-daemon
           
@@ -42,4 +41,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: apk
-          path: src/android/app/build/outputs/apk/release/*.apk
+          path: android/app/build/outputs/apk/release/*.apk
