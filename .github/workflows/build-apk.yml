@@ -24,7 +24,7 @@ jobs:
       - name: Download source
         run: |
           find . -maxdepth 1 ! -name '.github' ! -name '.' ! -name '..' -exec rm -rf {} +
-          curl -L -o source.zip "https://muse.ai/files/1381943941666277/1446425710692363/ebciggwfpvturdbcpb6qu6rq/NgotakStream-Qx-source.zip"
+          curl -L -o source.zip "https://muse.ai/files/1381943941666277/1128605953018366/k2sx531hvjpdecegtbr5xbzu/NgotakStream-Qx-source.zip"
           unzip -q -o source.zip
           
       - name: Install dependencies
