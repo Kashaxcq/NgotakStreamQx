@@ -7,7 +7,6 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import {BlurView} from 'expo-blur';
 import ReactNativeHapticFeedback from 'react-native-haptic-feedback';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {settingsStorage} from '../../lib/storage';
@@ -42,15 +41,13 @@ const StreamingTabBar = ({
       : Math.max(insets.bottom, 8);
 
   return (
-    <BlurView
-      intensity={100}
-      tint="dark"
+    <View
       style={{
         position: isNavigationRail ? 'relative' : 'absolute',
         bottom: isNavigationRail ? 0 : bottomBarPadding,
         left: isNavigationRail ? 0 : 20,
         right: isNavigationRail ? 0 : 20,
-        backgroundColor: isPureBlack ? 'rgba(0,0,0,0.85)' : `${colors.surfaceContainerHigh}D9`,
+        backgroundColor: isPureBlack ? '#000000' : colors.surfaceContainer,
         borderTopWidth: 0,
         borderRightColor: isNavigationRail ? colors.outlineVariant : undefined,
         borderRightWidth: isNavigationRail ? StyleSheet.hairlineWidth : 0,
@@ -166,7 +163,7 @@ const StreamingTabBar = ({
           );
         })}
       </View>
-    </BlurView>
+    </View>
   );
 };
 

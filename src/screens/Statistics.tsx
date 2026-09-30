@@ -13,7 +13,6 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
-import LinearGradient from 'react-native-linear-gradient';
 import type {StatsStackParamList} from '../App';
 import AmbientBackground from '../components/ui/AmbientBackground';
 import IconButton from '../components/ui/IconButton';
@@ -430,16 +429,10 @@ const Statistics = ({navigation}: Props) => {
           </View>
 
           <View style={{paddingHorizontal: 20}}>
-            <LinearGradient
-              colors={[
-                colors.primaryContainer,
-                colors.secondaryContainer,
-                colors.surfaceContainer,
-              ]}
-              start={{x: 0, y: 0}}
-              end={{x: 1, y: 1}}
+            <View
               style={{
-                borderRadius: 28,
+                backgroundColor: colors.surfaceContainer,
+                borderRadius: 20,
                 padding: 22,
                 marginBottom: 16,
                 borderWidth: 1,
@@ -447,13 +440,13 @@ const Statistics = ({navigation}: Props) => {
               }}>
               <AppText
                 role="titleSmall"
-                style={{color: colors.onPrimaryContainer, opacity: 0.85}}>
+                style={{color: colors.onSurface, opacity: 0.85}}>
                 Total watch time
               </AppText>
               <AppText
                 role="headlineLarge"
                 style={{
-                  color: colors.onPrimaryContainer,
+                  color: colors.onSurface,
                   fontSize: 44,
                   fontWeight: '800',
                   marginTop: 6,
@@ -491,7 +484,7 @@ const Statistics = ({navigation}: Props) => {
                 />
                 <StatTile value={String(stats.activeDays)} label="Active days" />
               </View>
-            </LinearGradient>
+            </View>
 
             {isEmpty ? (
               <Surface level="low" style={{padding: 24, alignItems: 'center'}}>
