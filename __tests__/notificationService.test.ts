@@ -101,7 +101,7 @@ describe('notification service download lifecycle', () => {
           smallIcon: 'ic_download_notification_system',
           pressAction: {
             id: 'default',
-            launchActivity: 'com.ngotakstreamqx.test.MainActivity',
+            launchActivity: 'com.qxshaa.ngotakstreamqx.test.MainActivity',
             launchActivityFlags: [2, 4, 1],
           },
           groupId: 'ngotakstreamqx-downloads',
@@ -178,7 +178,7 @@ describe('notification service download lifecycle', () => {
             expect.objectContaining({
               pressAction: {
                 id: 'start-now-download',
-                launchActivity: 'com.ngotakstreamqx.test.MainActivity',
+                launchActivity: 'com.qxshaa.ngotakstreamqx.test.MainActivity',
                 launchActivityFlags: [2, 4, 1],
               },
             }),
