@@ -63,9 +63,9 @@ const writeMobileSyncManifestNow = async (
 ): Promise<void> => {
   const directory = await getSyncDirectory(location, true);
   if (!directory) {
-    throw new Error('Unable to create NgotakStream Qx sync directory');
+    throw new Error('Unable to create NgotakStreamQx Film sync directory');
   }
-  const fileName = `ngotakstreamqx-${manifest.deviceId}.json`;
+  const fileName = `ngotakstreamqxfilm-${manifest.deviceId}.json`;
   const existing = await findChild(directory, fileName);
   const fileUri =
     existing ||
@@ -79,7 +79,7 @@ const writeMobileSyncManifestNow = async (
   const written =
     await FileSystem.StorageAccessFramework.readAsStringAsync(fileUri);
   if (!parseSyncManifest(written)) {
-    throw new Error('NgotakStream Qx sync manifest verification failed');
+    throw new Error('NgotakStreamQx Film sync manifest verification failed');
   }
 };
 

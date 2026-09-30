@@ -101,10 +101,10 @@ describe('notification service download lifecycle', () => {
           smallIcon: 'ic_download_notification_system',
           pressAction: {
             id: 'default',
-            launchActivity: 'com.qxshaa.ngotakstreamqx.test.MainActivity',
+            launchActivity: 'com.ngotakstreamqxfilm.test.MainActivity',
             launchActivityFlags: [2, 4, 1],
           },
-          groupId: 'ngotakstreamqx-downloads',
+          groupId: 'ngotakstreamqxfilm-downloads',
           sortKey: 'movie_direct_0',
           actions: [
             expect.objectContaining({pressAction: {id: 'pause-download'}}),
@@ -172,13 +172,13 @@ describe('notification service download lifecycle', () => {
           navigationTarget: 'downloads',
         },
         android: expect.objectContaining({
-          groupId: 'ngotakstreamqx-downloads',
+          groupId: 'ngotakstreamqxfilm-downloads',
           sortKey: 'movie_direct_0',
           actions: [
             expect.objectContaining({
               pressAction: {
                 id: 'start-now-download',
-                launchActivity: 'com.qxshaa.ngotakstreamqx.test.MainActivity',
+                launchActivity: 'com.ngotakstreamqxfilm.test.MainActivity',
                 launchActivityFlags: [2, 4, 1],
               },
             }),
@@ -246,7 +246,7 @@ describe('notification service download lifecycle', () => {
 
     const foregroundNotification = mockDisplayNotification.mock.calls[0][0];
     expect(foregroundNotification.android).toMatchObject({
-      groupId: 'ngotakstreamqx-downloads',
+      groupId: 'ngotakstreamqxfilm-downloads',
       sortKey: '0000-summary',
       groupSummary: true,
       groupAlertBehavior: 2,
@@ -299,7 +299,7 @@ describe('notification service download lifecycle', () => {
         id: 'show_s1_e1',
         android: expect.objectContaining({
           asForegroundService: false,
-          groupId: 'ngotakstreamqx-downloads',
+          groupId: 'ngotakstreamqxfilm-downloads',
           sortKey: 'show_s1_e1',
         }),
       }),
@@ -310,7 +310,7 @@ describe('notification service download lifecycle', () => {
         id: 'show_s1_e2',
         android: expect.objectContaining({
           asForegroundService: false,
-          groupId: 'ngotakstreamqx-downloads',
+          groupId: 'ngotakstreamqxfilm-downloads',
           sortKey: 'show_s1_e2',
         }),
       }),

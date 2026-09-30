@@ -12,7 +12,7 @@ function withCustomNativeModules(config) {
     'android',
     async cfg => {
       const projectRoot = cfg.modRequest.projectRoot;
-      const packageName = cfg.android?.package || 'com.qxshaa.ngotakstreamqx';
+      const packageName = cfg.android?.package || 'com.ngotakstreamqxfilm';
       const packagePath = packageName.replace(/\./g, '/');
       const targetDir = path.join(
         projectRoot,
@@ -26,14 +26,14 @@ function withCustomNativeModules(config) {
 
       fs.mkdirSync(targetDir, {recursive: true});
 
-      // Copy from native-src/android/com/qxshaa/ngotakstreamqx
+      // Copy from native-src/android/com/ngotakstreamqxfilm
       const sourceDir = path.join(
         projectRoot,
         'native-src',
         'android',
-        'com',
-        'qxshaa',
-        'ngotakstreamqx',
+        'id',
+        'ngotakstreamqxfilm',
+        'ngotakstreamqxfilm',
       );
 
       if (fs.existsSync(sourceDir)) {
@@ -46,7 +46,7 @@ function withCustomNativeModules(config) {
             // Read the file and update the package name
             let content = fs.readFileSync(sourceFile, 'utf8');
             content = content.replace(
-              /^package [\w.]+$/m,
+              /^package id\.ngotakstreamqxfilm\.ngotakstreamqxfilm$/m,
               `package ${packageName}`,
             );
 

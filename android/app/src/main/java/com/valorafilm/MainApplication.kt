@@ -1,4 +1,4 @@
-package com.qxshaa.ngotakstreamqx
+package com.ngotakstreamqxfilm
 
 import com.facebook.react.modules.network.OkHttpClientProvider
 

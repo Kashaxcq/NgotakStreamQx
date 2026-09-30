@@ -20,11 +20,11 @@ export type ThemeProfile = ThemeProfileDraft & {
 
 export const DEFAULT_THEME_PROFILE_DRAFT: ThemeProfileDraft = {
   name: 'Signature',
-  primary: '#2E7CF6',
-  secondary: '#7C93B8',
-  accent: '#22D3EE',
+  primary: '#FFFFFF',
+  secondary: '#97979A',
+  accent: '#E4E4E4',
   background: '#000000',
-  surface: '#0B1220',
+  surface: '#171717',
   text: '#F2F2F2',
 };
 
@@ -134,7 +134,7 @@ export const createPaletteFromProfile = (
   } as MaterialColors;
 };
 
-export const THEME_EXPORT_FORMAT = 'ngotakstreamqx-theme';
+export const THEME_EXPORT_FORMAT = 'ngotakstreamqxfilm-theme';
 export const THEME_EXPORT_VERSION = 1;
 
 export const serializeThemeForExport = (profile: ThemeProfileDraft) => ({

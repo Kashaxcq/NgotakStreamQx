@@ -161,7 +161,7 @@ const CastRemotePlayer = ({
           </TouchableOpacity>
           <View className="flex-1">
             <AppText className="text-white text-lg font-semibold" numberOfLines={1}>
-              {title || 'NgotakStream Qx'}
+              {title || 'NgotakStreamQx Film'}
             </AppText>
             {!!subtitle && (
               <AppText className="text-white/65 text-xs mt-0.5" numberOfLines={1}>

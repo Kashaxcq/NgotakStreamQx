@@ -100,10 +100,6 @@ export const useViewingStatsStore = create<ViewingStatsState>()(
           const day = prev?.days[key] ?? {ms: 0, plays: 0};
           if (ms > 0) {
             day.ms += ms;
-            const hour = new Date(at).getHours();
-            const hours = day.hours ?? new Array(24).fill(0);
-            hours[hour] = (hours[hour] ?? 0) + ms;
-            day.hours = hours;
           }
           if (isPlay) {
             day.plays += 1;

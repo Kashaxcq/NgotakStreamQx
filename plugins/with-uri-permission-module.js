@@ -81,7 +81,7 @@ function withUriPermissionModule(config) {
     'android',
     async cfg => {
       const projectRoot = cfg.modRequest.projectRoot;
-      const packageName = cfg.android?.package || 'com.qxshaa.ngotakstreamqx';
+      const packageName = cfg.android?.package || 'com.ngotakstreamqxfilm';
       const packagePath = packageName.replace(/\./g, '/');
       const targetFile = path.join(
         projectRoot,

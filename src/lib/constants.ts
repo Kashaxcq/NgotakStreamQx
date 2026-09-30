@@ -7,8 +7,8 @@ export const FLAGS = {
 
 export const themes: {name: string; color: string}[] = [
   {
-    name: 'NgotakStream Qx',
-    color: '#2E7CF6',
+    name: 'NgotakStreamQx Film',
+    color: '#FF6347',
   },
   {
     name: 'Hayasaka',
@@ -45,5 +45,5 @@ export const themes: {name: string; color: string}[] = [
 ];
 
 export const socialLinks = {
-  github: 'https://github.com/flowzyren-wq/NgotakStreamQx',
+  github: 'https://github.com/flowzyren-wq/NgotakStreamQxFilm',
 };

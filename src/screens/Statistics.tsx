@@ -24,7 +24,6 @@ import {showAppDialog} from '../lib/zustand/appDialogStore';
 import useViewingStatsStore from '../lib/zustand/viewingStatsStore';
 import {
   STATS_RANGES,
-  computeActivityBreakdown,
   computeRangeStats,
   formatWatchDuration,
   type StatsRangeKey,
@@ -85,99 +84,6 @@ const StatTile = ({value, label}: {value: string; label: string}) => {
         {label}
       </AppText>
     </View>
-  );
-};
-
-const WEEKDAY_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-const formatHourLabel = (hour: number): string => {
-  if (hour === 0) {
-    return '12AM';
-  }
-  if (hour < 12) {
-    return `${hour}AM`;
-  }
-  if (hour === 12) {
-    return '12PM';
-  }
-  return `${hour - 12}PM`;
-};
-
-const ActivityBars = ({
-  title,
-  caption,
-  values,
-  labels,
-  barColor,
-}: {
-  title: string;
-  caption?: string;
-  values: number[];
-  labels: string[];
-  barColor: string;
-}) => {
-  const colors = useM3Colors();
-  const max = Math.max(...values, 1);
-  return (
-    <Surface level="low" style={{marginBottom: 16, padding: 18}}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'baseline',
-          marginBottom: 14,
-        }}>
-        <AppText
-          role="titleMedium"
-          style={{color: colors.onSurface, fontWeight: '700'}}>
-          {title}
-        </AppText>
-        {caption ? (
-          <AppText role="labelSmall" style={{color: colors.onSurfaceVariant}}>
-            {caption}
-          </AppText>
-        ) : null}
-      </View>
-      <View
-        style={{flexDirection: 'row', alignItems: 'flex-end', height: 110}}>
-        {values.map((value, index) => {
-          const isPeak = value > 0 && value === max;
-          return (
-            <View
-              key={index}
-              style={{
-                flex: 1,
-                height: '100%',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-              }}>
-              <View
-                style={{
-                  width: '62%',
-                  height: `${value > 0 ? Math.max((value / max) * 100, 5) : 0}%`,
-                  backgroundColor: isPeak ? barColor : `${barColor}59`,
-                  borderRadius: 3,
-                }}
-              />
-            </View>
-          );
-        })}
-      </View>
-      <View style={{flexDirection: 'row', marginTop: 8}}>
-        {labels.map((label, index) => (
-          <AppText
-            key={index}
-            role="labelSmall"
-            style={{
-              flex: 1,
-              textAlign: 'center',
-              color: colors.onSurfaceVariant,
-            }}>
-            {label}
-          </AppText>
-        ))}
-      </View>
-    </Surface>
   );
 };
 
@@ -358,10 +264,6 @@ const Statistics = ({navigation}: Props) => {
   const scrollY = useSharedValue(0);
 
   const stats = computeRangeStats(titles, range);
-  const activity = computeActivityBreakdown(titles, range);
-  const hourLabels = Array.from({length: 24}, (_, hour) =>
-    hour % 6 === 0 ? formatHourLabel(hour) : '',
-  );
 
   const scrollHandler = useAnimatedScrollHandler({
     onScroll: event => {
@@ -728,24 +630,6 @@ const Statistics = ({navigation}: Props) => {
                     />
                   ))}
                 </Surface>
-
-                <ActivityBars
-                  title="Activity by day"
-                  values={activity.byWeekday}
-                  labels={WEEKDAY_LABELS}
-                  barColor={colors.primary}
-                />
-                <ActivityBars
-                  title="Activity by hour"
-                  caption={
-                    activity.peakHour !== null
-                      ? `Peak: ${formatHourLabel(activity.peakHour)}`
-                      : undefined
-                  }
-                  values={activity.byHour}
-                  labels={hourLabels}
-                  barColor={colors.tertiary}
-                />
               </>
             )}
           </View>

@@ -17,9 +17,9 @@ module.exports = () => {
   const HAS_FIREBASE =
     !IS_PLAYSTORE && (hasAndroidGoogleServices || hasIosGooglePlist);
   const PACKAGE_NAME = IS_PLAYSTORE
-    ? 'com.qxshaa.ngotakstreamqx.play'
-    : 'com.qxshaa.ngotakstreamqx';
-  const APP_SCHEME = 'ngotakstreamqx';
+    ? 'com.ngotakstreamqxfilm.play'
+    : 'com.ngotakstreamqxfilm';
+  const APP_SCHEME = 'ngotakstreamqxfilm';
   const plugins = [
     './plugins/with-custom-native-modules.js',
     './plugins/android-native-config.js',
@@ -62,21 +62,15 @@ module.exports = () => {
         },
       },
     ],
-    // TEMP-OFFLINE: bootsplash plugin disabled because `sharp` native binary
-    // cannot be installed while the egress proxy rejects auth. The splash
-    // assets were generated manually and are copied into android/ after
-    // prebuild (see scripts/restore-bootsplash-assets.mjs). Re-enable when
-    // network access is restored.
-    // [
-    //   'react-native-bootsplash',
-    //   {
-    //     assetsDir: 'assets/bootsplash',
-    //     android: {
-    //       parentTheme: 'EdgeToEdge',
-    //     },
-    //   },
-    // ],
-    './plugins/with-bootsplash-offline.js',
+    [
+      'react-native-bootsplash',
+      {
+        assetsDir: 'assets/bootsplash',
+        android: {
+          parentTheme: 'EdgeToEdge',
+        },
+      },
+    ],
     [
       'expo-build-properties',
       {
@@ -108,21 +102,25 @@ module.exports = () => {
       },
     ],
 
-    // expo-dev-client removed for release build (reduces APK size)
+    [
+      'expo-dev-client',
+      {
+        launchMode: 'most-recent',
+      },
+    ],
     'expo-font',
     'expo-status-bar',
   ];
   return {
     expo: {
-      name: 'NgotakStream Qx',
-      icon: './assets/icon.png',
+      name: 'NgotakStreamQx Film',
       scheme: APP_SCHEME,
-      displayName: 'NgotakStream Qx',
+      displayName: 'NgotakStreamQx Film',
       jsEngine: 'hermes',
       newArchEnabled: true,
       autolinking: {exclude: ['expo-splash-screen']},
       plugins,
-      slug: 'ngotakstream-qx',
+      slug: 'ngotakstreamqxfilm',
       version: '1.0.3',
       userInterfaceStyle: 'dark',
       experiments: {

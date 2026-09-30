@@ -69,7 +69,7 @@ const ThemeStudio = () => {
   const exportProfile = async (profile: ThemeProfile) => {
     try {
       await Share.share({
-        title: `${profile.name} (NgotakStream Qx theme)`,
+        title: `${profile.name} (NgotakStreamQx Film theme)`,
         message: JSON.stringify(serializeThemeForExport(profile), null, 2),
       });
     } catch {

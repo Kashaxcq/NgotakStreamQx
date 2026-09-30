@@ -90,8 +90,8 @@ describe('downloads store', () => {
     });
     store.updateProgress(id, 50, 100, 10);
     store.markCompleted(id, {
-      filePath: 'content://downloads/valorafilm-movie',
-      finalDocumentUri: 'content://downloads/valorafilm-movie',
+      filePath: 'content://downloads/ngotakstreamqxfilm-movie',
+      finalDocumentUri: 'content://downloads/ngotakstreamqxfilm-movie',
       totalBytes: 100,
     });
 

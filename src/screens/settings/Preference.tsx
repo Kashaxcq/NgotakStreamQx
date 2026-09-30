@@ -245,7 +245,7 @@ const Preferences = () => {
           <SettingsSection title="Privacy">
             <SettingsSwitchRow
               title="Usage and crash reports"
-              description="Help improve NgotakStream Qx with anonymous diagnostics"
+              description="Help improve NgotakStreamQx Film with anonymous diagnostics"
               value={telemetryOptIn}
               divider={false}
               onValueChange={async next => {

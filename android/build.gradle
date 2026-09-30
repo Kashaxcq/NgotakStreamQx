@@ -21,17 +21,7 @@ allprojects {
   repositories {
     google()
     mavenCentral()
-    maven { url 'https://www.jitpack.io'; content { includeGroupByRegex "io\\.github\\..*" } }
-  }
-  // Limit native ABIs to save memory/time (only arm64 + armv7 needed)
-  plugins.withId('com.android.library') {
-    android {
-      defaultConfig {
-        ndk {
-          abiFilters "arm64-v8a", "armeabi-v7a"
-        }
-      }
-    }
+    maven { url 'https://www.jitpack.io' }
   }
 }
 

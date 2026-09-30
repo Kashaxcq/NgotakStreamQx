@@ -9,8 +9,6 @@ export interface StatsRange {
 export interface DayStat {
   ms: number;
   plays: number;
-  /** Optional per-hour watch time in ms, index 0-23. Absent on legacy data. */
-  hours?: number[];
 }
 
 export interface ViewingTitleStats {
@@ -65,11 +63,11 @@ export const STATS_RANGES: StatsRange[] = [
 ];
 
 export const DONUT_COLORS = [
-  '#2E7CF6',
-  '#22D3EE',
-  '#2DD4BF',
-  '#10B981',
-  '#5B8DEF',
+  '#FF6B8A',
+  '#FFD166',
+  '#4CC9F0',
+  '#9BE3B5',
+  '#B388FF',
 ];
 
 const OTHER_COLOR = '#6B6B70';
@@ -116,54 +114,6 @@ export function formatWatchDuration(ms: number, withSeconds = false): string {
     return '<1m';
   }
   return '0m';
-}
-
-export interface ActivityBreakdown {
-  /** Watch time in ms per weekday, index 0 = Monday … 6 = Sunday. */
-  byWeekday: number[];
-  /** Watch time in ms per hour of day, index 0-23. */
-  byHour: number[];
-  /** Hour (0-23) with the most watch time, or null when empty. */
-  peakHour: number | null;
-}
-
-/**
- * Aggregates real watch time per weekday and per hour of day for the given
- * range. Hourly data is only available for ticks recorded after hourly
- * tracking was introduced; older entries contribute to weekday totals only.
- */
-export function computeActivityBreakdown(
-  titles: Record<string, ViewingTitleStats>,
-  rangeKey: StatsRangeKey,
-  now: number = Date.now(),
-): ActivityBreakdown {
-  const startKey = rangeStartKey(rangeKey, now);
-  const byWeekday = [0, 0, 0, 0, 0, 0, 0];
-  const byHour = new Array(24).fill(0);
-
-  for (const entry of Object.values(titles)) {
-    for (const [key, stat] of Object.entries(entry.days)) {
-      if (key < startKey || stat.ms <= 0) {
-        continue;
-      }
-      const date = new Date(
-        Number(key.slice(0, 4)),
-        Number(key.slice(5, 7)) - 1,
-        Number(key.slice(8, 10)),
-      );
-      const weekday = (date.getDay() + 6) % 7;
-      byWeekday[weekday] += stat.ms;
-      if (stat.hours) {
-        for (let h = 0; h < 24; h++) {
-          byHour[h] += stat.hours[h] ?? 0;
-        }
-      }
-    }
-  }
-
-  const maxHourMs = Math.max(...byHour);
-  const peakHour = maxHourMs > 0 ? byHour.indexOf(maxHourMs) : null;
-  return {byWeekday, byHour, peakHour};
 }
 
 export const EMPTY_RANGE_STATS: RangeStats = {

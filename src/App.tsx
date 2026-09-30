@@ -25,7 +25,6 @@ import * as SystemUI from 'expo-system-ui';
 // import DisableProviders from './screens/settings/DisableProviders';
 import About from './screens/settings/About';
 import Statistics from './screens/Statistics';
-import AdultSection from './screens/adult/AdultSection';
 import BootSplash from 'react-native-bootsplash';
 import {enableFreeze, enableScreens} from 'react-native-screens';
 import Preferences from './screens/settings/Preference';
@@ -87,7 +86,6 @@ export type HomeStackParamList = {
     isSearch: boolean;
   };
   Webview: {link: string};
-  AdultSection: undefined;
 };
 
 export type RootStackParamList = {
@@ -356,7 +354,7 @@ const App = () => {
 
           if (!currentProvider?.value || !currentProviderIsInstalled) {
             const preferredProvider =
-              installedProviders.find(p => p.value === 'ngotakstreamqx') ||
+              installedProviders.find(p => p.value === 'ngotakstreamqxfilm') ||
               installedProviders[0];
             useContentStore.getState().setProvider(preferredProvider);
             useContentStore
@@ -401,8 +399,6 @@ const App = () => {
         <HomeStack.Screen name="ScrollList" component={ScrollList} />
         <HomeStack.Screen name="Webview" component={WebView} />
         <HomeStack.Screen
-          name="AdultSection"
-          component={AdultSection}
           options={{animation: 'fade_from_bottom'}}
         />
       </HomeStack.Navigator>
@@ -585,6 +581,20 @@ const App = () => {
             ),
           }}
         />
+        <Tab.Screen
+          name="StatsStack"
+          component={StatsStackScreen}
+          options={{
+            title: 'Stats',
+            tabBarIcon: ({focused, color, size}) => (
+              <MaterialCommunityIcons
+                name={focused ? 'chart-box' : 'chart-box-outline'}
+                color={color}
+                size={size}
+              />
+            ),
+          }}
+        />
         {!hideDownloadsTab && (
           <Tab.Screen
             name="DownloadsStack"
@@ -601,20 +611,6 @@ const App = () => {
             }}
           />
         )}
-        <Tab.Screen
-          name="StatsStack"
-          component={StatsStackScreen}
-          options={{
-            title: 'Statistics',
-            tabBarIcon: ({focused, color, size}) => (
-              <MaterialCommunityIcons
-                name={focused ? 'chart-box' : 'chart-box-outline'}
-                color={color}
-                size={size}
-              />
-            ),
-          }}
-        />
       </Tab.Navigator>
     );
   }

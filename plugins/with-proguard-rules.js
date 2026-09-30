@@ -10,8 +10,8 @@ const RULES = `
 -keep interface org.libtorrent4j.** { *; }
 -keep enum org.libtorrent4j.** { *; }
 
-# Keep custom native modules (both com.qxshaa.ngotakstreamqx and dynamic package)
--keep class com.qxshaa.ngotakstreamqx.** { *; }
+# Keep custom native modules (both com.ngotakstreamqxfilm and dynamic package)
+-keep class com.ngotakstreamqxfilm.** { *; }
 `;
 
 module.exports = function withProguardRules(config) {
@@ -25,14 +25,14 @@ module.exports = function withProguardRules(config) {
         'proguard-rules.pro'
       );
       
-      const packageName = cfg.android?.package || 'com.qxshaa.ngotakstreamqx';
+      const packageName = cfg.android?.package || 'com.ngotakstreamqxfilm';
 
       if (fs.existsSync(proguardRulesFile)) {
         let content = fs.readFileSync(proguardRulesFile, 'utf8');
         if (!content.includes('org.libtorrent4j')) {
           content += RULES;
           // Add the current package name to proguard rules
-          if (packageName !== 'com.qxshaa.ngotakstreamqx') {
+          if (packageName !== 'com.ngotakstreamqxfilm') {
             content += `-keep class ${packageName}.** { *; }\n`;
           }
           fs.writeFileSync(proguardRulesFile, content, 'utf8');

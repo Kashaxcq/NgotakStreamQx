@@ -22,7 +22,7 @@ const manifest = (
   ...overrides,
 });
 
-describe('NgotakStream Qx sync manifest', () => {
+describe('NgotakStreamQx Film sync manifest', () => {
   it('merges watchlist items from different devices', () => {
     const merged = mergeSyncManifests([
       manifest('mobile', {

@@ -1,4 +1,4 @@
-package com.qxshaa.ngotakstreamqx
+package com.ngotakstreamqxfilm
 
 import android.util.Log
 import fi.iki.elonen.NanoHTTPD

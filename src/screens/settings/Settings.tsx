@@ -56,7 +56,7 @@ const Settings = ({navigation}: Props) => {
   );
   const provider = useContentStore(state => state.provider);
   const providerName =
-    provider?.display_name || provider?.value || 'NgotakStream Qx';
+    provider?.display_name || provider?.value || 'NgotakStreamQx Film';
 
   const scrollY = useSharedValue(0);
 
@@ -174,7 +174,7 @@ const Settings = ({navigation}: Props) => {
     showAppDialog({
       title: 'Erase all local data?',
       message:
-        'This permanently erases every NgotakStream Qx MMKV store, including settings, installed provider data, Watchlist, Continue watching, download records, and cached state. This cannot be undone. Downloaded media files on disk are not deleted.',
+        'This permanently erases every NgotakStreamQx Film MMKV store, including settings, installed provider data, Watchlist, Continue watching, download records, and cached state. This cannot be undone. Downloaded media files on disk are not deleted.',
       variant: 'error',
       actions: [
         {label: 'Cancel'},
@@ -319,7 +319,7 @@ const Settings = ({navigation}: Props) => {
                             fontWeight: '700',
                             letterSpacing: 0.2,
                           }}>
-                          NgotakStream Qx
+                          NgotakStreamQx Film
                         </AppText>
                         <View
                           style={{

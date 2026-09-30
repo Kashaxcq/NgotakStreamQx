@@ -42,7 +42,7 @@ describe('Android SAF download location', () => {
 
   it('does not activate a legacy raw path', () => {
     expect(
-      parseDownloadLocation('/storage/emulated/0/Download/valorafilm'),
+      parseDownloadLocation('/storage/emulated/0/Download/ngotakstreamqxfilm'),
     ).toBeNull();
   });
 

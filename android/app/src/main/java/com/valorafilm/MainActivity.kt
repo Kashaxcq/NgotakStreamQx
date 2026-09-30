@@ -1,4 +1,4 @@
-package com.qxshaa.ngotakstreamqx
+package com.ngotakstreamqxfilm
 import com.reactnative.googlecast.api.RNGCCastContext
 import com.zoontek.rnbootsplash.RNBootSplash
 

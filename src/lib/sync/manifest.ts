@@ -1,5 +1,5 @@
 export const NGOTAK_SYNC_SCHEMA_VERSION = 1;
-export const NGOTAK_SYNC_DIRECTORY = '.ngotakstreamqx-sync';
+export const NGOTAK_SYNC_DIRECTORY = '.ngotakstreamqxfilm-sync';
 
 export type SyncRecordKind = 'download' | 'history' | 'watchlist';
 

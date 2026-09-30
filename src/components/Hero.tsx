@@ -232,13 +232,6 @@ const Hero = memo(
         )}
         <View style={{flexDirection: 'row', alignItems: 'center', gap: 8}}>
           <HeroTopButton
-            icon="rabbit-variant"
-            iconImage={require('../../assets/hentai_icon.png')}
-            iconColor={searchButtonColor}
-            label="Hentai section"
-            onPress={() => navigation.navigate('AdultSection' as any)}
-          />
-          <HeroTopButton
             icon="cog"
             iconColor={searchButtonColor}
             label="Settings"
