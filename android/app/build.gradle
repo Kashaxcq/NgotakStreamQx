@@ -96,9 +96,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.ngotakstreamqxfilm'
+    namespace 'com.qxshaa.ngotakstreamqx'
     defaultConfig {
-        applicationId 'com.ngotakstreamqxfilm'
+        applicationId 'com.qxshaa.ngotakstreamqx'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 193

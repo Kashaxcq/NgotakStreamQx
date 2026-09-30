@@ -17,9 +17,9 @@ module.exports = () => {
   const HAS_FIREBASE =
     !IS_PLAYSTORE && (hasAndroidGoogleServices || hasIosGooglePlist);
   const PACKAGE_NAME = IS_PLAYSTORE
-    ? 'com.ngotakstreamqxfilm.play'
-    : 'com.ngotakstreamqxfilm';
-  const APP_SCHEME = 'ngotakstreamqxfilm';
+    ? 'com.qxshaa.ngotakstreamqx.play'
+    : 'com.qxshaa.ngotakstreamqx';
+  const APP_SCHEME = 'ngotakstreamqx';
   const plugins = [
     './plugins/with-custom-native-modules.js',
     './plugins/android-native-config.js',
@@ -113,14 +113,14 @@ module.exports = () => {
   ];
   return {
     expo: {
-      name: 'NgotakStreamQx Film',
+      name: 'NgotakStream Qx',
       scheme: APP_SCHEME,
-      displayName: 'NgotakStreamQx Film',
+      displayName: 'NgotakStream Qx',
       jsEngine: 'hermes',
       newArchEnabled: true,
       autolinking: {exclude: ['expo-splash-screen']},
       plugins,
-      slug: 'ngotakstreamqxfilm',
+      slug: 'ngotakstream-qx',
       version: '1.0.3',
       userInterfaceStyle: 'dark',
       experiments: {

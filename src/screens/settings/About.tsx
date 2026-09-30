@@ -17,8 +17,8 @@ import AppText from '../../components/ui/Text';
 import AmbientBackground from '../../components/ui/AmbientBackground';
 import {useM3Colors} from '../../theme/M3PaletteContext';
 
-const DEVELOPER_NAME = 'NgotakStreamQxFilm';
-const DEFAULT_PACKAGE = 'com.ngotakstreamqxfilm';
+const DEVELOPER_NAME = 'QxShaa';
+const DEFAULT_PACKAGE = 'com.qxshaa.ngotakstreamqx';
 
 const InfoRow = ({label, value}: {label: string; value: string}) => {
   const colors = useM3Colors();

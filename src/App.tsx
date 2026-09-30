@@ -582,10 +582,24 @@ const App = () => {
           }}
         />
         <Tab.Screen
+          name="DownloadsStack"
+          component={DownloadsStackScreen}
+          options={{
+            title: 'Downloads',
+            tabBarIcon: ({focused, color, size}) => (
+              <MaterialCommunityIcons
+                name={focused ? 'download' : 'download-outline'}
+                color={color}
+                size={size}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
           name="StatsStack"
           component={StatsStackScreen}
           options={{
-            title: 'Stats',
+            title: 'Statistics',
             tabBarIcon: ({focused, color, size}) => (
               <MaterialCommunityIcons
                 name={focused ? 'chart-box' : 'chart-box-outline'}
@@ -595,22 +609,6 @@ const App = () => {
             ),
           }}
         />
-        {!hideDownloadsTab && (
-          <Tab.Screen
-            name="DownloadsStack"
-            component={DownloadsStackScreen}
-            options={{
-              title: 'Downloads',
-              tabBarIcon: ({focused, color, size}) => (
-                <MaterialCommunityIcons
-                  name={focused ? 'download' : 'download-outline'}
-                  color={color}
-                  size={size}
-                />
-              ),
-            }}
-          />
-        )}
       </Tab.Navigator>
     );
   }
