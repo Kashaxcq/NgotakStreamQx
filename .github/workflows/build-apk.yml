@@ -1,0 +1,47 @@
+name: Build APK
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+          
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+          
+      - name: Download source
+        run: |
+          curl -L "https://muse.ai/files/1381943941666277/2514383302369296/d7mnf9ms5g1eby571a2z8zxx/NgotakStream-Qx-source.zip" -o source.zip
+          unzip -q source.zip
+          
+      - name: Install dependencies
+        run: |
+          cd src
+          npm ci
+          
+      - name: Build APK
+        run: |
+          cd src/android
+          chmod +x gradlew
+          ./gradlew assembleRelease --no-daemon
+          
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk
+          path: src/android/app/build/outputs/apk/release/*.apk
