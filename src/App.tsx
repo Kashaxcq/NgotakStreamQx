@@ -59,7 +59,6 @@ import {
   reconcileDownloadState,
 } from './lib/downloadReconciliation';
 import useDownloadsStore from './lib/zustand/downloadsStore';
-import useNavigationPreferencesStore from './lib/zustand/navigationPreferencesStore';
 import {
   initializeSyncService,
   publishSyncManifest,
@@ -189,7 +188,6 @@ const App = () => {
     'Linotee': require('../assets/fonts/Linotee.ttf'),
     'BebasNeue': require('../assets/fonts/BebasNeue.ttf'),
   });
-  const provider = useContentStore(state => state.provider);
   const {width: windowWidth} = useWindowDimensions();
   const isLargeScreen = windowWidth > 768;
   const useLinoteeFont = useThemeStore(state => state.useLinoteeFont);
@@ -398,9 +396,6 @@ const App = () => {
         <HomeStack.Screen name="Info" component={Info} />
         <HomeStack.Screen name="ScrollList" component={ScrollList} />
         <HomeStack.Screen name="Webview" component={WebView} />
-        <HomeStack.Screen
-          options={{animation: 'fade_from_bottom'}}
-        />
       </HomeStack.Navigator>
     );
   }
@@ -524,9 +519,6 @@ const App = () => {
     );
   }
   function TabStack() {
-    const hideDownloadsTab = useNavigationPreferencesStore(
-      state => state.hideDownloadsTab,
-    );
     return (
       <Tab.Navigator
         detachInactiveScreens={true}
