@@ -24,7 +24,7 @@ const nativeBridge = (window as unknown as {ReactNativeWebView: NativeBridge})
 const send = (message: SandboxMessage): void => {
   try {
     nativeBridge.postMessage(JSON.stringify(message));
-  } catch (error) {
+  } catch {
     // Nothing else to do: the bridge is the only channel out.
   }
 };

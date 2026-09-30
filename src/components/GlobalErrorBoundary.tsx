@@ -2,7 +2,6 @@ import AppText from '../components/ui/Text';
 import React from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   ScrollView,
   Dimensions,

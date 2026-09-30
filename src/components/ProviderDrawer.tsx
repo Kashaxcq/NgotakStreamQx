@@ -1,5 +1,5 @@
 import AppText from '../components/ui/Text';
-import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {View, ScrollView, TouchableOpacity} from 'react-native';
 import React from 'react';
 import useContentStore from '../lib/zustand/contentStore';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';

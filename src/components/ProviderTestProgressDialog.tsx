@@ -1,7 +1,7 @@
 import AppText from '../components/ui/Text';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import React from 'react';
-import {ActivityIndicator, Text, TouchableOpacity, View} from 'react-native';
+import {ActivityIndicator, TouchableOpacity, View} from 'react-native';
 import type {
   ProviderDiagnosticProgressStage,
   ProviderDiagnosticProgress,
@@ -44,7 +44,6 @@ const ProviderTestProgressDialog = ({
   providerName,
   steps,
   resultMessage,
-  primary,
   onClose,
 }: ProviderTestProgressDialogProps) => {
   const colors = useM3Colors();

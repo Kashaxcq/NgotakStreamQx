@@ -1,5 +1,5 @@
 import AppText from '../components/ui/Text';
-import {View, Text, StatusBar, TouchableOpacity} from 'react-native';
+import {View, StatusBar, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {useState} from 'react';
 import useContentStore from '../lib/zustand/contentStore';

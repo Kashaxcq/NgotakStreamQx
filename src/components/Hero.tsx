@@ -6,13 +6,11 @@ import React, {
   useCallback,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from 'react';
 import {
   Image,
   ImageSourcePropType,
-  Keyboard,
   Pressable,
   View,
 } from 'react-native';
@@ -27,7 +25,6 @@ import useHeroStore from '../lib/zustand/herostore';
 import {useM3Colors} from '../theme/M3PaletteContext';
 import {mixHex} from '../theme/seeds';
 import Button from './ui/Button';
-import SearchField, {type SearchFieldRef} from './ui/SearchField';
 import AppText from './ui/Text';
 
 interface HeroProps {

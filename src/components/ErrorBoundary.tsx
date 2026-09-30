@@ -1,6 +1,6 @@
 import AppText from '../components/ui/Text';
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import useThemeStore from '../lib/zustand/themeStore';
 
 interface ErrorFallbackProps {

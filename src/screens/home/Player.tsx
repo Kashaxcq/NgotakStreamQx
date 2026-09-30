@@ -5,7 +5,6 @@ import {
   AppStateStatus,
   BackHandler,
   ScrollView,
-  Text,
   ToastAndroid,
   TouchableOpacity,
   View,

@@ -1,7 +1,7 @@
 import AppText from '../components/ui/Text';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 
 type PlayerMenuRowProps = {
   title: string;

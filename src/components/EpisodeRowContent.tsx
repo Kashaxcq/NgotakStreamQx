@@ -2,7 +2,6 @@ import AppText from '../components/ui/Text';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import React, {useEffect, useState} from 'react';
 import {Image, TouchableOpacity, View} from 'react-native';
-import Text from './ui/Text';
 import {useM3Colors} from '../theme/M3PaletteContext';
 
 type EpisodeRowContentProps = {

@@ -243,7 +243,7 @@ const SubtitlePreference = () => {
                   setFontSize(16);
                   setOpacity(1);
                   setBottomElevation(10);
-                }}></IconButton>
+                }} />
             }
           />
         </SettingsSection>

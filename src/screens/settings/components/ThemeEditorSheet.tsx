@@ -101,7 +101,6 @@ const ThemeEditorSheet = ({visible, editing, onClose}: ThemeEditorSheetProps) =>
     setDraft(initial);
     setNameError(false);
     setPreviewProfile(toPreview(initial));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initial, editing?.createdAt, editing?.id, setPreviewProfile, visible]);
 
   const pushDraft = (next: ThemeProfileDraft) => {

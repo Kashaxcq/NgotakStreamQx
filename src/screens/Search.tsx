@@ -1,4 +1,4 @@
-import {View, FlatList, Pressable, Text} from 'react-native';
+import {View, FlatList, Pressable} from 'react-native';
 import React, {useState, useEffect, useCallback, memo, useRef} from 'react';
 import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import type {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';

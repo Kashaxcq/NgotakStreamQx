@@ -47,7 +47,6 @@ import useDownloadsStore from '../lib/zustand/downloadsStore';
 import {useM3Colors} from '../theme/M3PaletteContext';
 import MaterialDialogSurface from './ui/MaterialDialogSurface';
 import {LEGACY_TERTIARY_BACKGROUND} from '../theme/seeds';
-import Text from './ui/Text';
 import EpisodeRowContent, {getValidImageUri} from './EpisodeRowContent';
 import {setSyncedEpisodeProgress} from '../lib/sync/syncService';
 

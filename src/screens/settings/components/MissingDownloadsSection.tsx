@@ -1,13 +1,13 @@
 import AppText from '../../../components/ui/Text';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import useDownloadsStore, {
   selectMissingDownloads,
 } from '../../../lib/zustand/downloadsStore';
 import {useM3Colors} from '../../../theme/M3PaletteContext';
 
-const MissingDownloadsSection = ({primary}: {primary: string}) => {
+const MissingDownloadsSection = () => {
   const colors = useM3Colors();
   const missing = useDownloadsStore(selectMissingDownloads);
   const removeDownload = useDownloadsStore(state => state.removeDownload);

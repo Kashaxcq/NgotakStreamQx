@@ -10,7 +10,6 @@ import {
   Pressable,
   ScrollView,
   StatusBar,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';

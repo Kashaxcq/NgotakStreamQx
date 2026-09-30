@@ -66,7 +66,7 @@ const Downloads = () => {
               Downloads
             </AppText>
             <CurrentDownloadsSection primary={colors.primary} />
-            <MissingDownloadsSection primary={colors.primary} />
+            <MissingDownloadsSection />
             {groups.length > 0 ? (
               <AppText
                 role="titleLargeEmphasized"

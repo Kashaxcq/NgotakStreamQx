@@ -1,7 +1,5 @@
-import type {OMDBResult, OMDBResponse} from '../../types/omdb';
+import type {OMDBResult} from '../../types/omdb';
 
-const OMDB_API_KEY = '7755307f';
-const BASE_URL = 'https://www.omdbapi.com';
 
 export const searchOMDB = async (query: string): Promise<OMDBResult[]> => {
   if (!query) {

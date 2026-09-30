@@ -6,7 +6,6 @@ import {
   StatusBar,
   Platform,
   RefreshControl,
-  StyleSheet,
 } from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {SettingsStackParamList} from '../../App';
@@ -22,7 +21,6 @@ import Animated, {
   Extrapolation,
   interpolateColor,
 } from 'react-native-reanimated';
-import useThemeStore from '../../lib/zustand/themeStore';
 import useContentStore from '../../lib/zustand/contentStore';
 import {
   extensionStorage,
@@ -170,7 +168,7 @@ const Extensions = ({navigation}: Props) => {
         ) {
           await refreshProviders(author);
         }
-      } catch (error) {
+      } catch {
         // Still try to load from cache if initialization fails
         loadProviders();
       }

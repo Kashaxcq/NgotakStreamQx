@@ -156,7 +156,6 @@ function logReport(report: WasmProbeReport): void {
     ? 'VIABLE: WebAssembly runs — quickjs-emscripten is worth a real integration spike.'
     : 'NOT VIABLE (yet): WebAssembly did not fully work in this engine.';
 
-  // eslint-disable-next-line no-console
   console.log(
     '[wasm-probe] ' + JSON.stringify(report) + '\n[wasm-probe] ' + verdict,
   );

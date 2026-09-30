@@ -10,10 +10,6 @@ const DEFAULT_BRANCH = 'main';
 const RAW_GITHUB_HOST = 'raw.githubusercontent.com';
 const GITHUB_HOST = 'github.com';
 
-const normalizeUrl = (url: string): string => {
-  return url.trim().replace(/\/+$/, '');
-};
-
 const buildRawGithubUrl = (
   author: string,
   repo = DEFAULT_REPO_NAME,

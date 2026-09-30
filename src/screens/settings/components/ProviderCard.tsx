@@ -1,7 +1,7 @@
 import AppText from '../../../components/ui/Text';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import React from 'react';
-import {ActivityIndicator, Image, Pressable, Text, View} from 'react-native';
+import {ActivityIndicator, Image, Pressable, View} from 'react-native';
 import type {ProviderExtension} from '../../../lib/storage/extensionStorage';
 import {useM3Colors} from '../../../theme/M3PaletteContext';
 

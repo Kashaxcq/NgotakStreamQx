@@ -1,6 +1,5 @@
 import AppText from '../components/ui/Text';
 import {
-  Text,
   TouchableOpacity,
   Dimensions,
   ToastAndroid,

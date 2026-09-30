@@ -14,7 +14,6 @@ import {useM3Colors} from '../../../theme/M3PaletteContext';
 import AppDialog from '../../../components/AppDialog';
 import MaterialDialogSurface from '../../../components/ui/MaterialDialogSurface';
 import {readableOnColor} from '../../../theme/seeds';
-import Text from '../../../components/ui/Text';
 
 type Props = {
   primary: string;
@@ -76,7 +75,7 @@ const ProviderSourceManager = ({primary, visible, onSourceChanged}: Props) => {
       setShowAddDialog(false);
       reloadSources();
       await onSourceChanged(extensionStorage.getProviderSource());
-    } catch (error) {
+    } catch {
       setInvalidSourceDialog(true);
     }
   };
